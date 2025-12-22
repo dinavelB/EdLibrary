@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Login from "./Components/Login";
+import CreateAccount from "./Components/CreateAccount";
 
 function App() {
-  return <Login />;
+  return <CreateAccount />;
 }
 
 export default App;

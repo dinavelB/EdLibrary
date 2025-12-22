@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Login from "./Components/Login";
+import CreateAccount from "./Components/CreateAccount";
 import { jsx as _jsx } from "react/jsx-runtime";
 function App() {
-  return /*#__PURE__*/_jsx(Login, {});
+  return /*#__PURE__*/_jsx(CreateAccount, {});
 }
 export default App;
