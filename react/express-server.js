@@ -28,13 +28,13 @@ app.use(express.json());
 
 //endpoints
 app.post("/create-account", (req, res) => {
-  const { username, email, password } = req.body;
+  const { user_Name, email, password } = req.body;
 
-  const data = [username, email, password];
+  const data = [user_Name, email, password];
 
-  if (!username || !email || !password) {
+  if (!user_Name || !email || !password) {
     return res.status(400).json({
-      message: "please fill all reqwuirements",
+      message: "failed to add user",
     });
   }
   database.query(

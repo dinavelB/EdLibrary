@@ -11,6 +11,12 @@ export default function CreateAccount() {
     password: "",
   });
 
+  const [error, setErrors] = useState({
+    username: false,
+    email: false,
+    password: false,
+  });
+
   const storeData = (e) => {
     const { name, value } = e.target;
 
@@ -21,6 +27,19 @@ export default function CreateAccount() {
   };
 
   const createAccount = async () => {
+    const { username, email, password } = data;
+
+    const errors = {
+      username: !username,
+      email: !email,
+      password: !password,
+    };
+
+    setErrors(errors);
+
+    if (errors.username || errors.email || errors.password) {
+      console.log("must fill all fields");
+    }
     const responsePostDat = await fetch("/create-account", {
       method: "POST",
       headers: {

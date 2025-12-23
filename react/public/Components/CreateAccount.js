@@ -29,6 +29,14 @@ export default function CreateAccount() {
     _useState2 = _slicedToArray(_useState, 2),
     data = _useState2[0],
     setData = _useState2[1];
+  var _useState3 = useState({
+      username: false,
+      email: false,
+      password: false
+    }),
+    _useState4 = _slicedToArray(_useState3, 2),
+    error = _useState4[0],
+    setErrors = _useState4[1];
   var storeData = function storeData(e) {
     var _e$target = e.target,
       name = _e$target.name,
@@ -39,10 +47,20 @@ export default function CreateAccount() {
   };
   var createAccount = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-      var responsePostDat, response;
+      var username, email, password, errors, responsePostDat, response;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.n) {
           case 0:
+            username = data.username, email = data.email, password = data.password;
+            errors = {
+              username: !username,
+              email: !email,
+              password: !password
+            };
+            setErrors(errors);
+            if (errors.username || errors.email || errors.password) {
+              console.log("must fill all fields");
+            }
             _context.n = 1;
             return fetch("/create-account", {
               method: "POST",
