@@ -1,4 +1,4 @@
-import e from "express";
+import database from "./myDatabase.js";
 import express from "express";
 const app = express();
 
@@ -27,6 +27,33 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //endpoints
+app.post("/create-account", (req, res) => {
+  const { username, email, password } = req.body;
+
+  const data = [username, email, password];
+
+  if (!username || !email || !password) {
+    return res.status(400).json({
+      message: "please fill all reqwuirements",
+    });
+  }
+  database.query(
+    "insert into Users (userName, email, password) values (?, ?, ?)",
+    data,
+    (error, queryResults) => {
+      if (error) {
+        console.log(error);
+        return res.status(500).json({
+          message: "database error, failed to add user",
+        });
+      }
+
+      res.status(200).json({
+        message: "account created successfully",
+      });
+    }
+  );
+});
 
 app.use(express.static("public"));
 

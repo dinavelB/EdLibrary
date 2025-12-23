@@ -1,10 +1,38 @@
 import { useState } from "react";
-import 
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 
 export default function CreateAccount() {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const storeData = (e) => {
+    const { name, value } = e.target;
+
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const createAccount = async () => {
+    const responsePostDat = await fetch("/create-account", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const response = await responsePostDat.json();
+    console.log(response);
+  };
+
   return (
     <section className="container">
       <section className="createacc-form">
@@ -14,15 +42,30 @@ export default function CreateAccount() {
         </div>
         <h1>Create Account</h1>
         <label htmlFor="">Username</label>
-        <input type="text" placeholder="Enter your username" />
+        <input
+          type="text"
+          placeholder="Enter your username"
+          name="username"
+          onChange={storeData}
+        />
         <label htmlFor="">Email</label>
-        <input type="email" placeholder="Enter your email" />
+        <input
+          type="email"
+          placeholder="Enter your email"
+          name="email"
+          onChange={storeData}
+        />
         <label htmlFor="">Password</label>
-        <input type="password" placeholder="Enter your password" />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          name="password"
+          onChange={storeData}
+        />
         <a href="http://" target="_blank" rel="noopener noreferrer">
           Already have an account? Login
         </a>
-        <button>Create</button>
+        <button onClick={createAccount}>Create</button>
       </section>
     </section>
   );
