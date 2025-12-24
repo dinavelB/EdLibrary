@@ -5,6 +5,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 
 export default function CreateAccount() {
+  const nav = useNavigate();
+
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -50,6 +52,13 @@ export default function CreateAccount() {
 
     const response = await responsePostDat.json();
     console.log(response);
+
+    if (!responsePostDat.ok) {
+      console.log("Account creation failed");
+      return;
+    }
+
+    nav("/login");
   };
 
   return (

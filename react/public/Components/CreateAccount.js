@@ -21,6 +21,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function CreateAccount() {
+  var nav = useNavigate();
   var _useState = useState({
       username: "",
       email: "",
@@ -76,7 +77,15 @@ export default function CreateAccount() {
           case 2:
             response = _context.v;
             console.log(response);
+            if (responsePostDat.ok) {
+              _context.n = 3;
+              break;
+            }
+            console.log("Account creation failed");
+            return _context.a(2);
           case 3:
+            nav("/login");
+          case 4:
             return _context.a(2);
         }
       }, _callee);
