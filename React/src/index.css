@@ -107,3 +107,14 @@ body {
   border-radius: 20px;
   box-shadow: 0px 5px 10px 0px rgb(187, 187, 219);
 }
+.navigation-container {
+  display: grid;
+  grid-template-areas: "me-btn search-box";
+}
+.categories {
+  display: flex;
+}
+.book-container {
+  display: grid;
+  grid-template-areas: "book1 book2 book3 book4";
+}
