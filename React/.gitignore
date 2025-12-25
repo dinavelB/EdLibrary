@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+#ignore js files babel
+public/*.js
+public/Components/*.js

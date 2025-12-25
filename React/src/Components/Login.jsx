@@ -1,6 +1,6 @@
 import "../index.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
   const nav = useNavigate();
@@ -53,9 +53,7 @@ export default function Login() {
           name="password"
           onChange={storeData}
         />
-        <a href="http://" target="_blank" rel="noopener noreferrer">
-          Don't have an Account? Create Account
-        </a>
+        <Link to={"/"}>Don't have an Account? Create Account</Link>
         <button onClick={login}>Login</button>
       </section>
     </section>
