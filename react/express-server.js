@@ -56,7 +56,6 @@ app.post("/create-account", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  console.log("Login route hit", req.body);
   const { username, password } = req.body;
 
   database.query(
@@ -77,12 +76,14 @@ app.post("/login", (req, res) => {
       const databasePass = queryResults[0].password;
       if (password.trim() === databasePass) {
         return res.status(200).json({
-          success: "Account successfully login",
+          success: "Account successfully logged in",
         });
+      } else if (password === 0) {
+        return res.status(401).json({ error: "fill password" });
       } else {
         return res
           .status(401)
-          .json({ error: "incorrect password or username" });
+          .json({ error: "Incorrect password or username" });
       }
     }
   );

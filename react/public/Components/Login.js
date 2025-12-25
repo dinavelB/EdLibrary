@@ -41,7 +41,6 @@ export default function Login() {
       return _regenerator().w(function (_context) {
         while (1) switch (_context.n) {
           case 0:
-            console.log("Login route hit", req.body);
             _context.n = 1;
             return fetch("/login", {
               method: "POST",
