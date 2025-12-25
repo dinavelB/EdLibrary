@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-export default function Dashboard() {
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+function NavigationBar() {
   return /*#__PURE__*/_jsx("nav", {
     children: /*#__PURE__*/_jsxs("div", {
       className: "me-btn",
@@ -12,5 +12,10 @@ export default function Dashboard() {
         children: "Me"
       })]
     })
+  });
+}
+export default function Dashboard() {
+  return /*#__PURE__*/_jsx(_Fragment, {
+    children: /*#__PURE__*/_jsx(NavigationBar, {})
   });
 }

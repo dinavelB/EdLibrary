@@ -9,7 +9,7 @@ export default function Navigation() {
       <Routes>
         <Route path="/" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/home" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

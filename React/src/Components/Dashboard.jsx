@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-export default function Dashboard() {
+function NavigationBar() {
   return (
     <nav>
       <div className="me-btn">
@@ -9,5 +9,13 @@ export default function Dashboard() {
         <label htmlFor="">Me</label>
       </div>
     </nav>
+  );
+}
+
+export default function Dashboard() {
+  return (
+    <>
+      <NavigationBar />
+    </>
   );
 }

@@ -13,7 +13,7 @@ export default function Navigation() {
         path: "/login",
         element: /*#__PURE__*/_jsx(Login, {})
       }), /*#__PURE__*/_jsx(Route, {
-        path: "/dashboard",
+        path: "/home",
         element: /*#__PURE__*/_jsx(Dashboard, {})
       })]
     })
