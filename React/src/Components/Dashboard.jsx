@@ -17,7 +17,7 @@ function NavigationBar() {
 function Category() {
   return (
     <nav className="category-container">
-      <ul>
+      <ul className="categories">
         <li>Fiction</li>
         <li>Romance</li>
         <li>Horror</li>
