@@ -8,6 +8,7 @@ function NavigationBar() {
         <FontAwesomeIcon icon={faUser} />
         <label htmlFor="">Me</label>
       </div>
+      <input type="text" placeholder="Search" />
     </nav>
   );
 }

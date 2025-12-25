@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 function NavigationBar() {
-  return /*#__PURE__*/_jsx("nav", {
-    children: /*#__PURE__*/_jsxs("div", {
+  return /*#__PURE__*/_jsxs("nav", {
+    children: [/*#__PURE__*/_jsxs("div", {
       className: "me-btn",
       children: [/*#__PURE__*/_jsx(FontAwesomeIcon, {
         icon: faUser
@@ -11,7 +11,10 @@ function NavigationBar() {
         htmlFor: "",
         children: "Me"
       })]
-    })
+    }), /*#__PURE__*/_jsx("input", {
+      type: "text",
+      placeholder: "Search"
+    })]
   });
 }
 export default function Dashboard() {
