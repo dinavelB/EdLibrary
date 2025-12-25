@@ -16,7 +16,7 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 import "../index.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Login() {
   var nav = useNavigate();
@@ -91,10 +91,8 @@ export default function Login() {
         placeholder: "Enter your password",
         name: "password",
         onChange: storeData
-      }), /*#__PURE__*/_jsx("a", {
-        href: "http://",
-        target: "_blank",
-        rel: "noopener noreferrer",
+      }), /*#__PURE__*/_jsx(Link, {
+        to: "/",
         children: "Don't have an Account? Create Account"
       }), /*#__PURE__*/_jsx("button", {
         onClick: login,

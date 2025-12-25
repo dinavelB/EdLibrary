@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
+import Dashboard from "./Dashboard";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export default function Navigation() {
   return /*#__PURE__*/_jsx(BrowserRouter, {
@@ -11,6 +12,9 @@ export default function Navigation() {
       }), /*#__PURE__*/_jsx(Route, {
         path: "/login",
         element: /*#__PURE__*/_jsx(Login, {})
+      }), /*#__PURE__*/_jsx(Route, {
+        path: "/dashboard",
+        element: /*#__PURE__*/_jsx(Dashboard, {})
       })]
     })
   });

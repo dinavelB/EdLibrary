@@ -78,7 +78,7 @@ app.post("/login", (req, res) => {
         return res.status(200).json({
           success: "Account successfully logged in",
         });
-      } else if (password === 0) {
+      } else if (password.length === 0) {
         return res.status(401).json({ error: "fill password" });
       } else {
         return res
