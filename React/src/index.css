@@ -108,8 +108,35 @@ body {
   box-shadow: 0px 5px 10px 0px rgb(187, 187, 219);
 }
 .navigation-container {
-  display: grid;
-  grid-template-areas: "me-btn search-box";
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+  gap: 800px;
+}
+.navigation-container div {
+  background-color: #504486;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  font-size: 16px;
+  width: 125px;
+  border-radius: 20px;
+  padding-left: 20px;
+  gap: 20px;
+  box-shadow: 0px 4px 5px 0px rgb(187, 187, 219);
+  background-color: white;
+  color: #504486;
+}
+.navigation-container input {
+  width: 382px;
+  margin-left: 500px;
+  height: 62px;
+  border-radius: 20px;
+  border: 1px solid #2546b1;
+  background-color: #ededed;
+  color: #7c63ea;
+  padding-left: 35px;
 }
 .categories {
   display: flex;
@@ -117,4 +144,7 @@ body {
 .book-container {
   display: grid;
   grid-template-areas: "book1 book2 book3 book4";
+}
+.me-btn FontAwesomeIcon {
+  font-size: 20px;
 }
