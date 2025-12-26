@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../index.css";
+import { useState } from "react";
 
 function NavigationBar() {
   return (
@@ -51,6 +52,7 @@ function Books() {
 }
 
 export default function Dashboard() {
+  const [categoryColor, setCategoryColor] = useState(null);
   return (
     <>
       <NavigationBar />
