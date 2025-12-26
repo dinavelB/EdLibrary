@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Navigation from "./Components/Navigation";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
-  return <Navigation />;
+  return <Dashboard />;
 }
 
 export default App;
