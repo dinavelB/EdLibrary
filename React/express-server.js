@@ -40,16 +40,23 @@ app.post("/create-account", (req, res) => {
   database.query(
     "insert into Users (userName, email, password) values (?, ?, ?)",
     data,
-    (error, queryResults) => {
+    (error) => {
       if (error) {
+        if (error.code === "ER_DUP_ENTRY") {
+          //code for duplicate unique value
+          return res.status(409).json({
+            //409 conflict === duplication
+            //database error to
+            message: "Username already exists",
+          });
+        }
         console.log(error);
         return res.status(500).json({
-          //database error to
-          message: "database error, failed to add user",
+          message: "Internal database error",
         });
       }
 
-      res.status(200).json({
+      res.status(201).json({
         message: "account created successfully",
       });
     }
