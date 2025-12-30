@@ -137,6 +137,11 @@ body {
   background-color: #ededed;
   color: #7c63ea;
   padding-left: 35px;
+  font-size: 15px;
+}
+.navigation-container input:focus {
+  color: black;
+  border: none;
 }
 .category-container {
   display: flex;
@@ -156,10 +161,11 @@ body {
   text-align: center;
   color: #2546b1;
   transition: background-color, 0.5s ease-in-out;
+  font-weight: 600;
 }
 .categories li.active {
   background-color: #2546b1;
-  color: white;
+  color: rgb(213, 211, 211);
 }
 
 .categories li:not(.active):hover {
@@ -177,8 +183,15 @@ body {
 .me-btn FontAwesomeIcon {
   font-size: 20px;
 }
+.book-container h1 {
+  text-align: center;
+  color: #2546b1;
+}
 .book-container div {
-  background-color: #eae7fa;
+  background-color: #d9d9d9;
+  height: 400px;
+  margin: 20px;
+  border: 20px solid #eae7fa;
 }
 .navigation-container.fade {
   opacity: 0;
@@ -206,4 +219,16 @@ body {
 .book-container.fade.show {
   opacity: 1;
   transform: translateY(0);
+}
+.popup {
+  position: fixed; /* overlay covers the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 70, 177, 0.8); /* semi-transparent blue */
+  display: flex; /* to center inner content */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }

@@ -40,15 +40,23 @@ app.post("/create-account", (req, res) => {
   database.query(
     "insert into Users (userName, email, password) values (?, ?, ?)",
     data,
-    (error, queryResults) => {
+    (error) => {
       if (error) {
+        if (error.code === "ER_DUP_ENTRY") {
+          //code for duplicate unique value
+          return res.status(409).json({
+            //409 conflict === duplication
+            //database error to
+            message: "Username already exists",
+          });
+        }
         console.log(error);
         return res.status(500).json({
-          message: "database error, failed to add user",
+          message: "Internal database error",
         });
       }
 
-      res.status(200).json({
+      res.status(201).json({
         message: "account created successfully",
       });
     }
@@ -73,7 +81,7 @@ app.post("/login", (req, res) => {
         return res.status(404).json({ error: "User not found" });
       }
 
-      const databasePass = queryResults[0].password;
+      const databasePass = queryResults[0].password; // yung result ng query nag rereturn ng array kaya dapat set yung index
       if (password.trim() === databasePass) {
         return res.status(200).json({
           success: "Account successfully logged in",
