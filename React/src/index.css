@@ -263,3 +263,20 @@ body {
   height: 600px;
   background-color: #d9d9d9;
 }
+.user-option {
+  position: fixed;
+  z-index: 1000;
+  background-color: #eae7fa;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  height: 100%;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.user-option.open {
+  transform: translateX(0%);
+  background-color: #eae7fa;
+  opacity: 1;
+}
