@@ -18,7 +18,7 @@ function NavigationBar({ animationLoad }) {
         <input type="text" placeholder="Search Book" />
       </nav>
 
-      <section className={`user-option ${userOptions ? "open" : ""}`}>
+      <section className={`user-option-container ${userOptions ? "open" : ""}`}>
         <button onClick={() => setUserOptions(false)}>X</button>
         <div className="options">
           <label htmlFor="">Profile</label>

@@ -263,7 +263,7 @@ body {
   height: 600px;
   background-color: #d9d9d9;
 }
-.user-option {
+.user-option-container {
   position: fixed;
   z-index: 1000;
   background-color: #eae7fa;
@@ -272,11 +272,24 @@ body {
   transition: transform 0.3s ease;
   height: 100%;
   width: 500px;
-  display: flex;
-  flex-direction: column;
 }
-.user-option.open {
+.user-option-container button {
+  margin-top: 20px;
+  margin-left: 450px;
+}
+.user-option-container.open {
   transform: translateX(0%);
   background-color: #eae7fa;
   opacity: 1;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 40px;
+  margin-top: 200px;
+  gap: 20px;
+  font-size: 20px;
+}
+.options label {
 }
