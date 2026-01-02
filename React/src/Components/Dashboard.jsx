@@ -52,7 +52,7 @@ function Category({ bgColor, setBgColor, animationLoad }) {
 
 function Books({ animationLoad }) {
   const [selectedBook, setSelectedBook] = useState(null);
-  const books = ["book1", "book2", "book3", "book4", "book5", "book6"]; //value
+  const books = ["book1", "book2", "book3", "book4", "book5", "book6", "book7"]; //value
 
   const seeBook = (book) => {
     setSelectedBook(book);
@@ -70,7 +70,10 @@ function Books({ animationLoad }) {
             value,
             index //mapping, index position
           ) => (
-            <article key={index}>
+            <article
+              key={index}
+              className={`book-cards ${selectedBook === value ? "active" : ""}`}
+            >
               <h1>{value}</h1>
               <div onClick={() => seeBook(value)}>Sample</div>
             </article>
