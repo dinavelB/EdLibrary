@@ -302,7 +302,7 @@ body {
   font-size: 20px;
 }
 .book-cards {
-  transition: all 0.3s ease-in-out;
+  transition: box-shadow, background-color, 0.3s ease-in-out;
 }
 .book-cards.active {
   background-color: #bdc6e2;
