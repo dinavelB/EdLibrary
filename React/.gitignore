@@ -25,5 +25,6 @@ dist-ssr
 
 
 #ignore js files babel
-public/*.js
-public/Components/*.js
+public/*.js 
+public/Admin/admin-components/*.js
+public/client/Components/*.js

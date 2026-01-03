@@ -129,9 +129,9 @@ body {
   color: #504486;
 }
 .navigation-container input {
-  width: 382px;
+  width: 300px;
   margin-left: 500px;
-  height: 62px;
+  height: 40px;
   border-radius: 20px;
   border: 1px solid #2546b1;
   background-color: #ededed;
@@ -145,23 +145,26 @@ body {
 }
 .category-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  z-index: 1001;
 }
 .category-container ul {
-  margin-top: 20px;
+  margin-top: -20px;
   display: flex;
-  gap: 130px;
+  gap: 20px;
   list-style-type: none;
 }
 .categories li {
   background-color: #eae7fa;
-  padding: 20px 80px 20px 80px;
+  padding: 10px;
   border-radius: 20px;
   box-shadow: 0px 4px 5px 0px rgb(187, 187, 219);
   text-align: center;
   color: #2546b1;
   transition: background-color, 0.5s ease-in-out;
-  font-weight: 600;
+  font-weight: 400;
 }
 .categories li.active {
   background-color: #2546b1;
@@ -174,7 +177,7 @@ body {
 }
 
 .book-container {
-  margin-top: 60px;
+  margin-top: 300px;
   display: grid;
   grid-template-areas: "book1 book2 book3 book4";
   gap: 20px;

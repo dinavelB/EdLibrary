@@ -2,10 +2,13 @@ import path from "path";
 
 export default {
   mode: "development",
-  entry: "./src/main.jsx",
+  entry: {
+    client: "./src/client/Components/main.jsx",
+    admin: "./src/Admin/admin-components/main.jsx",
+  },
   output: {
     path: path.resolve("./public"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
   },
   module: {
     rules: [
