@@ -6,6 +6,9 @@ const port = 3000;
 
 const isDev = process.env.NODE_ENV !== "production";
 
+app.get("/", (req, res) => {
+  res.sendFile();
+});
 app.use((req, res, next) => {
   let csp =
     "default-src 'self'; " +
