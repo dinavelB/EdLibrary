@@ -32,21 +32,22 @@ function NavigationBar({ animationLoad }) {
 
 function Category({ bgColor, setBgColor, animationLoad }) {
   const categories = ["Fiction", "Romance", "Horror", "Educational", "History"];
-
   return (
-    <nav className={`category-container fade ${animationLoad ? "show" : ""}`}>
-      <ul className="categories">
-        {categories.map((category) => (
-          <li
-            key={category}
-            onClick={() => setBgColor(category)}
-            className={bgColor === category ? "active" : ""}
-          >
-            {category}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <nav className={`category-container fade ${animationLoad ? "show" : ""}`}>
+        <ul className="categories">
+          {categories.map((category) => (
+            <li
+              key={category}
+              onClick={() => setBgColor(category)}
+              className={bgColor === category ? "active" : ""}
+            >
+              {category}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 }
 
@@ -64,6 +65,7 @@ function Books({ animationLoad }) {
   };
   return (
     <>
+      <div></div>
       <section className={`book-container fade ${animationLoad ? "show" : ""}`}>
         {books.map(
           (
