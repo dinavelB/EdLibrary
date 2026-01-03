@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import "../index.css";
+import "./index.css";
 import { useState, useEffect } from "react";
 
 function NavigationBar({ animationLoad }) {

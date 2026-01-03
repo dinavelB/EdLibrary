@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Navigation from "./Components/Navigation";
-import Dashboard from "./Components/Dashboard";
+import Navigation from "./Navigation";
+import Dashboard from "./Dashboard";
 
 function App() {
   return <Dashboard />;
