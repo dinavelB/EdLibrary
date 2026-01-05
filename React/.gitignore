@@ -32,3 +32,6 @@ public/client/Components/*.js
 
 #server
 express-server.js
+
+#notes
+setup/
