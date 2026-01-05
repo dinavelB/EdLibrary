@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdfbf7;
+}
+section {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+.holder {
+  display: flex;
+  padding: 70px 50px 70px 50px;
+  background-color: aqua;
+  gap: 50px;
+}
+.img-container {
+  width: 400px;
+  background-color: antiquewhite;
+  height: 600px;
+}
+.p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.p-container input {
+  margin-top: -10px;
+}
+.p-container button {
+  margin-top: 20px;
+}
+.welcome-admin p {
+  margin-top: -20px;
+}
+
+@media (max-width: 915px) {
+  .img-container {
+    display: none;
+  }
+  .holder {
+    flex-direction: column;
+  }
+}

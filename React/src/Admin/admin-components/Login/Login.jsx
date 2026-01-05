@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import "./Login.css";
 export default function Login() {
   const nav = useNavigate();
 
@@ -7,9 +7,24 @@ export default function Login() {
     nav("/dashboard");
   };
   return (
-    <div>
-      <h1>I am a login page</h1>
-      <button onClick={loginbtn}>Login</button>
-    </div>
+    <section>
+      <div className="holder">
+        <div className="img-container"></div>
+        <div className="p-container">
+          <span>
+            Ed<span>Library</span>
+          </span>
+          <span className="welcome-admin">
+            <h1>Welcome, Admin</h1>
+            <p>Enter credentials to login as admin</p>
+          </span>
+          <label htmlFor="">Username</label>
+          <input type="text" placeholder="Enter username" />
+          <label htmlFor="">Password</label>
+          <input type="password" placeholder="Enter your password" />
+          <button>Sign-in</button>
+        </div>
+      </div>
+    </section>
   );
 }
