@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 
 export default function Dashboard() {
-  const adminToken = localStorage.getItem("adminRoute"); //take the string only or key
+  const token = localStorage.getItem("adminToken"); //take the string only or key
 
   const sampleVerify = async () => {
     const sendData = await fetch("/dashboard", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${adminToken}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     });
