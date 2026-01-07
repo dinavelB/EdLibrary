@@ -49,7 +49,7 @@ function DashboardComp({ options, active, setActive, nav }) {
   );
 }
 export default function Dashboard() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState("/dashboard/mainboard");
   const token = localStorage.getItem("adminToken"); //take the string only or key
   const nav = useNavigate();
 
@@ -67,11 +67,12 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    sampleVerify();
+    //force initial
+    nav("/dashboard/mainboard");
   }, []);
 
   const options = [
-    { navigate: "Dashboard", icon: dashboard, path: "/dashboard" },
+    { navigate: "Main Board", icon: dashboard, path: "/dashboard/mainboard" },
     { navigate: "Books", icon: book, path: "/dashboard/books" },
     { navigate: "Users", icon: users, path: "/dashboard/users" },
     { navigate: "Book Details", icon: details, path: "/dashboard/details" },

@@ -2,45 +2,62 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fdfbf7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #3b3b3b;
 }
+
 .navigation-container {
   background-color: #f1e9da;
   width: 300px;
   border-right: 1px solid #4a3b3377;
   padding-top: 20px;
   overflow: hidden;
+  box-shadow: 2px 0 6px rgba(74, 59, 51, 0.04);
 }
+
 .navigation-container ul {
   margin-top: 50px;
   list-style-type: none;
   display: block;
   padding: 20px;
 }
+
 .navigation-container li {
-  padding: 20px;
+  padding: 18px 20px;
   width: 100%;
   padding-left: 30px;
   display: flex;
   align-items: center;
   gap: 20px;
-  transition: all, 0.3s ease;
+  transition: background-color 300ms ease, transform 300ms ease,
+    box-shadow 300ms ease, color 300ms ease;
   font-weight: 500;
-  color: 15px;
+  color: #3b3b3b;
+  font-size: 18px;
+  border-radius: 14px;
+  cursor: pointer;
 }
+
 .navigation-container li:hover:not(.active) {
   background-color: #e4c090;
-  transform: translateY(-2px);
-  border-radius: 20px;
+  transform: translateX(6px);
+  box-shadow: 0 6px 18px rgba(74, 59, 51, 0.08);
+  color: #2a2a2a;
 }
+
 .dashboard-holder {
   display: flex;
   height: 100vh;
+  animation: dashboardFadeIn 900ms ease both;
 }
+
 .main-board-search {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .input-holder {
   background-color: #fdfbf7;
   padding: 30px;
@@ -50,32 +67,84 @@ body {
   display: flex;
   align-items: center;
 }
+
 .main-board {
   background-color: #f8f4ee;
-  height: 100%;
-  width: 1fr;
+  height: calc(100% - 40px);
   margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px 0px #4a3b3386;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(74, 59, 51, 0.09);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: contentFadeUp 800ms 200ms ease forwards;
 }
+
 .logo {
   margin-left: 50px;
+  font-size: 22px;
+  font-weight: 700;
 }
+
 .nav.active {
-  background-color: #b45309;
+  background: linear-gradient(90deg, #b45309, #8b2e05);
   color: white;
   border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.12);
+  transform: translateX(2px);
 }
+
 .input-holder input {
-  height: 40px;
-  width: 250px;
-  border-radius: 5px;
-  border: 1px solid #b45309;
-  padding-left: 40px;
+  height: 44px;
+  width: 280px;
+  border-radius: 8px;
+  border: 1px solid #d2a57a;
+  padding-left: 44px;
+  transition: box-shadow 200ms ease, border-color 200ms ease;
 }
+
+.input-holder input:focus {
+  outline: none;
+  border-color: #b45309;
+  box-shadow: 0 6px 18px rgba(180, 83, 9, 0.12);
+}
+
 .input-holder img {
   position: absolute;
-  margin-left: 10px;
+  margin-left: 18px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+
+.navigation-container img {
+  width: 20px;
+  height: 20px;
+}
+
+@keyframes dashboardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contentFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -90,5 +159,9 @@ body {
   }
   .navigation-container {
     display: none;
+  }
+  .main-board {
+    margin: 12px;
+    padding: 20px;
   }
 }
