@@ -31,7 +31,7 @@ public/Admin/admin-components/*.js
 public/client/Components/*.js
 
 #server
-express-server.js
+express.js
 
 #notes
 setup/
