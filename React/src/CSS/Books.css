@@ -1,0 +1,34 @@
+#add-book {
+  background-color: #b45309;
+  color: white;
+  height: 40px;
+  width: 100px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  transition: transform, 0.3s ease;
+}
+#add-book:hover {
+  transform: translateY(-5px);
+  background-color: #e4c090;
+}
+.actions {
+  border-bottom: 1px solid #e4d9bc;
+  padding-left: 20px;
+  height: 60px;
+}
+.books-h {
+  width: 100%;
+}
+.addbook-c {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.171);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
