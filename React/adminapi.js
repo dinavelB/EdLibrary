@@ -33,6 +33,7 @@ route.post("/", (req, res) => {
       }
 
       if (results.length === 0) {
+        console.log("not found");
         return res.status(404).json({
           message: "username not found",
         });
